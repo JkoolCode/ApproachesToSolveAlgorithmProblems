@@ -14,7 +14,7 @@ import java.util.StringTokenizer;
  * @author Junior Oblitas
  * Activity selector problem
  */
-public class ActivitySelectorPriorityQueue {
+public class ActivitySelectorPriorityQueueFunctionalOrder {
 
     public static void main(String[] args) {
         InputStream inputStream = System.in;
@@ -26,7 +26,8 @@ public class ActivitySelectorPriorityQueue {
     }
 
     static void solve(int testCases, InputReader in, PrintWriter out){
-        PriorityQueue<Pair<Integer, Integer>> minHeap = new PriorityQueue<>();
+        PriorityQueue<Pair<Integer, Integer>> minHeap 
+                = new PriorityQueue<>((a, b) -> a.finish - b.finish); //Using Functional Interface Comparator in Background
         minHeap.offer(new Pair(1, 7));
         minHeap.offer(new Pair(2, 5));
         minHeap.offer(new Pair(4, 6));
@@ -55,12 +56,10 @@ public class ActivitySelectorPriorityQueue {
         }
         
         out.println("Total: "+ans.size());
-        for(Pair<Integer, Integer> pair : ans){
-            out.println(pair);    
-        }
+        ans.forEach(pair -> out.println(pair));
     }
     
-    static class Pair<Item extends Number, Item2 extends Number> implements Comparable<Pair>{
+    static class Pair<Item extends Number, Item2 extends Number> {
         private Item start;
         private Item2 finish;
         public Pair(Item start, Item2 finish){
@@ -68,15 +67,6 @@ public class ActivitySelectorPriorityQueue {
             this.finish = finish;
         }
 
-        @Override
-        public int compareTo(Pair o) {
-            /*int rs = 0;
-            if(this.finish.intValue() > o.finish.intValue()) rs = 1;
-            else rs = -1;
-            return rs;*/
-            return (this.finish.intValue() - o.finish.intValue());
-        }
-        
         @Override
         public String toString() {
             return "Pair{" + "start=" + start + ", finish=" + finish + '}';
