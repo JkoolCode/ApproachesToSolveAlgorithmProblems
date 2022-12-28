@@ -61,7 +61,7 @@ public class BFS {
         for (int i = 0; i < N; i++) {
         	graph.add(new ArrayList<Integer>());    
         }
-        
+        //Undirected graph
         graph.get(0).add(1);
         graph.get(1).add(0);
         
