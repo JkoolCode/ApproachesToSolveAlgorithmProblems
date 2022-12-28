@@ -31,7 +31,7 @@ public class BFS {
         initGraph(graph, N);
         ArrayList<Integer> distances = bfs(graph, V);
         
-        //show all the distances from V to each neighbor node
+        //show all the distances from V to each neighbors node
         for (int i = 0; i < distances.size(); i++) {
             out.println(distances.get(i));
         }
