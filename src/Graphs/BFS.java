@@ -25,29 +25,29 @@ public class BFS {
     }
 
     static void solve(int testCases, InputReader in, PrintWriter out){
-        ArrayList<ArrayList<Integer>> matrix = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
         final int N = 6;
         final int V = 3;
-        initMatrix(matrix, N);
-        ArrayList<Integer> result = bfs(matrix, V);
+        initGraph(graph, N);
+        ArrayList<Integer> distances = bfs(graph, V);
         
         //show all the distances from V to each neighbor node
-        for (int i = 0; i < result.size(); i++) {
-            out.println(result.get(i));
+        for (int i = 0; i < distances.size(); i++) {
+            out.println(distances.get(i));
         }
         
     }
     
-    static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> matrix, int v){
-        ArrayList<Integer> d = new ArrayList<>(matrix.size());
-        for (int i = 0; i < matrix.size(); i++) d.add(-1);
+    static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> graph, int v){ //O(m)
+        ArrayList<Integer> d = new ArrayList<>(graph.size());
+        for (int i = 0; i < graph.size(); i++) d.add(-1);
         int x ;
         Queue<Integer> q = new LinkedList<>();
         d.set(v, 0);
         q.offer(v);
         while(!q.isEmpty()){ //mientras haya nodos por procesar
             x = q.poll();
-            for(int y : matrix.get(x)){ //para cada "y" vecino de "x"
+            for(int y : graph.get(x)){ //para cada "y" vecino de "x"
                 if(d.get(y) == -1){ //si "y" no fue colocado aun
                     d.set(y, (d.get(x) + 1));
                     q.offer(y);
@@ -57,29 +57,29 @@ public class BFS {
         return d;
     }
     
-    static void initMatrix(ArrayList<ArrayList<Integer>> matrix, int N){
+    static void initGraph(ArrayList<ArrayList<Integer>> graph, int N){
         for (int i = 0; i < N; i++) {
-            matrix.add(new ArrayList<Integer>());    
+        	graph.add(new ArrayList<Integer>());    
         }
         
-        matrix.get(0).add(1);
-        matrix.get(1).add(0);
+        graph.get(0).add(1);
+        graph.get(1).add(0);
         
-        matrix.get(0).add(2);
-        matrix.get(2).add(0);
+        graph.get(0).add(2);
+        graph.get(2).add(0);
         
-        matrix.get(2).add(4);
-        matrix.get(4).add(2);
+        graph.get(2).add(4);
+        graph.get(4).add(2);
         
-        matrix.get(4).add(3);
-        matrix.get(3).add(4);
+        graph.get(4).add(3);
+        graph.get(3).add(4);
         
-        matrix.get(3).add(5);
-        matrix.get(5).add(3);
+        graph.get(3).add(5);
+        graph.get(5).add(3);
         
         //Look distribution
         /*for (int i = 0; i < N; i++) {
-            ArrayList<Integer> vector = matrix.get(i);
+            ArrayList<Integer> vector = graph.get(i);
             for (int j = 0; j < vector.size(); j++) {
                 System.out.print(vector.get(j) + " ");
             }
