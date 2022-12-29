@@ -38,7 +38,7 @@ public class PrefixSum_base {
         	out.print(x + " ");
         out.println();
         
-        //Making queries to get the sum from a to b in O(1)
+        //Making queries to get the sum of [a:b] inclusive in O(1)
         int a, b, subArraySum = 0;
         a = 0; 
         b = 2;
