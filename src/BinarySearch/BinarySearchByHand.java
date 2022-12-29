@@ -30,7 +30,7 @@ public class BinarySearchByHand {
         else out.println("Existe en numero " + x + " dentro del arreglo");
     }
     
-    static int binarySearch(int[] arr, int target){
+    static int binarySearch(int[] arr, int target){ //O(lg(n))
         int a = -1, b = arr.length;
         int mid = 0;
         while(b - a > 1){
