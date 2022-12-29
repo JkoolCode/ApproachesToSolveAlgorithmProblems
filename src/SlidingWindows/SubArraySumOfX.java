@@ -28,7 +28,9 @@ public class SubArraySumOfX {
         final int N = arr.length;
         int iR = -1, jR = -1;
         
-        for (int i = 0; i < N; i++) {
+        //Sliding windows o two pointer technique
+        for (int i = 0; i < N; i++) { //O(n)
+        	//Into the window up to get the right sum or overcome the sum from i
             while(j < N && sum < x){
                 sum += arr[j];
                 j++;
@@ -39,7 +41,7 @@ public class SubArraySumOfX {
                 jR = j - 1;
                 break;
             }
-            sum -= arr[i];
+            sum -= arr[i]; //remove the most left value
         }
         
         if(iR != -1 && jR != -1)
