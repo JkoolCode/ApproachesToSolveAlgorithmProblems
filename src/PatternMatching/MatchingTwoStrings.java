@@ -28,7 +28,8 @@ public class MatchingTwoStrings {
         char[] sArr = s.toCharArray();
         int pSum = 0, sum = 0, count = 0;
         for (int i = 0; i < pArr.length; i++) pSum += (int) pArr[i];
-       
+        
+        //O(p*s)
         for (int i = 0; i < sArr.length - 3; i++) {
             for (int j = i; j < pArr.length+i; j++) {
                 sum += (int) sArr[j];
