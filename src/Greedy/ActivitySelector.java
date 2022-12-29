@@ -44,7 +44,7 @@ public class ActivitySelector {
     
     static void makeSort(int[] s, int[] f, final int N, PrintWriter out){
         int aux1, aux2, flag = 1 ;
-        for (int i = N-1; i > 0 && flag == 1; i--) { //O(N^2)
+        for (int i = N-1; i > 0 && flag == 1; i--) { //Bubble sort, O(N^2)
             flag = 0;
             for (int j = 0; j < i; j++) {
                 if(f[j] > f[j+1]){
