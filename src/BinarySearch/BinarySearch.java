@@ -26,7 +26,7 @@ public class BinarySearch {
         //int x = 100;
         int x = 3;
         int[] arr = {2,3,4,8,9,11,25};
-        int index = Arrays.binarySearch(arr, x);
+        int index = Arrays.binarySearch(arr, x); //O(lg(n))
         if(index > -1) out.println("Existe en numero " + x + " dentro del arreglo");
         else out.println("No existe en numero " + x + " dentro del arreglo");
             
