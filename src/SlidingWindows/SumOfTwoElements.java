@@ -27,11 +27,12 @@ public class SumOfTwoElements {
     static void solve(int testCases, InputReader in, PrintWriter out){
         int x = 12;
         int[] arr = {7,10,4,1,9,5,9,6};
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < arr.length; i++) map.put(arr[i], i);    
         
+        Map<Integer, Integer> map = new HashMap<>();//for getting indexes
+        for (int i = 0; i < arr.length; i++) map.put(arr[i], i);    
         Pair<Integer> pair = new Pair();
-        boolean result = exists(arr, pair, x);
+        
+        boolean result = exists(arr, pair, x); //O(n*lg(n))
         
         if(result){ 
             out.println("Existe");
@@ -44,11 +45,12 @@ public class SumOfTwoElements {
     }
     
     static boolean exists(int[] arr, Pair<Integer> pair, int target){
-        Arrays.sort(arr);
+        Arrays.sort(arr); //O(n*lg(n))
         int i = 0, j = arr.length - 1;
         int sum = 0;
         
-        while(i < j){
+        //Sliding windows or two pointer technique
+        while(i < j){ //O(n)
             sum = arr[j] + arr[i];
             if(sum == target) {
                 pair.x = arr[i];
