@@ -30,7 +30,7 @@ public class SubArraySumOfX {
         
         //Sliding windows or two pointer technique
         for (int i = 0; i < N; i++) { //O(n)
-        	//Into the window up to get the right sum or overcome the sum from i
+            //Into the window up to get the right sum or overcome the sum from i
             while(j < N && sum < x){
                 sum += arr[j];
                 j++;
