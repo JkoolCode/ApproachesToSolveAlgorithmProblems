@@ -39,7 +39,7 @@ public class BipartiteGraph_BFS {
         System.out.println(isBipartite ? "Graph is bipartite" : "Graph is not bipartite");
     }
     
-    static boolean isBipartite(Graph graph, int v){ //O(m)
+    static boolean isBipartite(Graph graph, int v){ //O(V + E)
         ArrayList<Integer> d = new ArrayList<>(graph.n);
         for (int i = 0; i < graph.n; i++) d.add(-1);
         //int x ;
