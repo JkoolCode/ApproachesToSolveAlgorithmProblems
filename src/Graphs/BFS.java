@@ -32,6 +32,7 @@ public class BFS {
         ArrayList<Integer> distances = bfs(graph, V);
         
         //show all the distances from V to each neighbors node
+        System.out.println("Distances from V = " + V + " to each neighbors node");
         for (int i = 0; i < distances.size(); i++) {
             out.println(distances.get(i));
         }
@@ -78,13 +79,14 @@ public class BFS {
         graph.get(5).add(3);
         
         //Look distribution
-        /*for (int i = 0; i < N; i++) {
+        for (int i = 0; i < N; i++) {
             ArrayList<Integer> vector = graph.get(i);
+            System.out.print("Node " + i + " -> ");
             for (int j = 0; j < vector.size(); j++) {
                 System.out.print(vector.get(j) + " ");
             }
             System.out.println("");
-        }*/
+        }
     }
 
     static class InputReader {
