@@ -31,6 +31,7 @@ public class DFS {
         final int node = 0; //initial node, you could initialize from any node
         initGraph(graph, N);
         boolean[] checked = new boolean[graph.size()]; //elements are false by default
+        System.out.println("Showing the travel in DFS fashion");
         dfs(graph, node, checked); //show the travel in dfs fashion
     }
     
@@ -76,13 +77,14 @@ public class DFS {
         graph.get(6).add(3);    
         
         //Look distribution
-        /*for (int i = 0; i < N; i++) {
+        for (int i = 0; i < N; i++) {
             ArrayList<Integer> vector = graph.get(i);
+            System.out.print("Node " + i + " -> ");
             for (int j = 0; j < vector.size(); j++) {
                 System.out.print(vector.get(j) + " ");
             }
             System.out.println("");
-        }*/
+        }
     }
 
     static class InputReader {
