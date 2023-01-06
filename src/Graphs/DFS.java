@@ -35,7 +35,7 @@ public class DFS {
         dfs(graph, node, checked); //show the travel in dfs fashion
     }
     
-    static void dfs(ArrayList<ArrayList<Integer>> graph, int node, boolean[] checked){
+    static void dfs(ArrayList<ArrayList<Integer>> graph, int node, boolean[] checked){ //O(V + E)
         Stack<Integer> s = new Stack<>();
         s.push(node);
         while(!s.empty()) {
