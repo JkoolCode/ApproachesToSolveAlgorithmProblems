@@ -39,7 +39,7 @@ public class BFS {
         
     }
     
-    static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> graph, int v){ //O(m)
+    static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> graph, int v){ //O(V + E)
         ArrayList<Integer> d = new ArrayList<>(graph.size());
         for (int i = 0; i < graph.size(); i++) d.add(-1);
         int x ;
