@@ -64,10 +64,10 @@ public class ConnectedComponents_DFS {
         s.push(v);
         components.set(v, curr_component);
         
-        while(!s.isEmpty()){ //mientras haya nodos por procesar
+        while(!s.isEmpty()){ //while there's a node to process 
             v = s.pop();
-            for(int u : graph.adjlist.get(v)){ //para cada "u" vecino de "v"
-                if(components.get(u) == -1){ //si "u" no fue colocado o visitado aun
+            for(int u : graph.adjlist.get(v)){ //for each "u" neighbor of "v"
+                if(components.get(u) == -1){ //if "u" didn't go visited
                     s.push(u);
                     components.set(u, curr_component);
                 }
