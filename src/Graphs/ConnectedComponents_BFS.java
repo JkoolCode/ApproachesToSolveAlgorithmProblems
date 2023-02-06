@@ -63,10 +63,10 @@ public class ConnectedComponents_BFS {
         q.offer(v);
         components.set(v, curr_component);
         
-        while(!q.isEmpty()){ //mientras haya nodos por procesar
+        while(!q.isEmpty()){ //while there's a node to process 
             v = q.poll();
-            for(int u : graph.adjlist.get(v)){ //para cada "u" vecino de "v"
-                if(components.get(u) == -1){ //si "u" no fue colocado o visitado aun
+            for(int u : graph.adjlist.get(v)){ //for each "u" neighbor of "v"
+                if(components.get(u) == -1){ //if "u" didn't go visited
                     q.offer(u);
                     components.set(u, curr_component);
                 }
